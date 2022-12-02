@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+     <title>SimFinder</title>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+              *{
+         margin: 0%;
+         padding: 0%;
+    }
+    form {
+  border: 3px solid #f1f1f1;
+}
+    H1{
+  font-size: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font: bold;
+  text-align: center;
+  padding: 5px;
+  padding-bottom: 15px;
+  color: #008ad3;
+}
+   
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.button {
+  background-color: blue;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+</style>
+<body>
+    <div class="wrap">
+        <h1>SimFinder</h1>
+        <form action="finder" method="post" >
+            {% csrf_token %}
+            <input type="text" id="number" name="number" class="display" placeholder="Enter Phone number">
+            <input type="submit" value="Search"class="button">
+        </form>
+     </div>
+          {%if Carrier%}
+              <h1>{{Carrier}}</h1>
+          {%endif%}
+</body>
+</html>
